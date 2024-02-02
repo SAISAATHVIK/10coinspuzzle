@@ -1,0 +1,38 @@
+import random
+
+def create_piles():
+    # Initial configuration for pile 1, where 0 represents tails and 1 represents heads
+    pile_1_initial = [1, 0, 1, 0, 0]
+
+    # Initial configuration for pile 2
+    pile_2_initial = [1, 1, 0, 0, 0]
+
+    return pile_1_initial, pile_2_initial
+
+def flip_pile(pile):
+    # Flip all the coins in the pile (0 becomes 1 and vice versa)
+    flipped_pile = [1 if coin == 0 else 0 for coin in pile]
+
+    return flipped_pile
+
+# Create initial piles
+pile_1_initial, pile_2_initial = create_piles()
+
+# Output the initial configuration
+print("Initial Configuration:")
+print("Pile 1:", pile_1_initial)
+print("Pile 2:", pile_2_initial)
+
+# Flip all coins in pile 1
+pile_1_flipped = flip_pile(pile_1_initial)
+
+# Output the flipped configuration
+print("\nAfter Flipping Pile 1:")
+print("Pile 1:", pile_1_flipped)
+print("Pile 2:", pile_2_initial)
+
+# Check if the number of heads is equal in both piles
+if pile_1_flipped.count(1) == pile_2_initial.count(1):
+    print("\nPile 1(heads) is now equal to Pile 2(heads)")
+else:
+    print("\nPile 1(heads) is not equal to Pile 2(heads)")
